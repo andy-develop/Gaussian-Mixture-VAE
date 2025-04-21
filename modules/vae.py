@@ -2,11 +2,11 @@ import torch
 import torch.nn as nn
 import numpy as np
 from torch.distributions.normal import Normal
-from mixture_linear import MixtureLinear
+from .mixture_linear import MixtureLinear
 from distributions.gumbel import gumbel_softmax_sample
 
 class VAE(nn.Module):
-    def __init__(self, input_size, hidden_size, output_size, n_classes, learnable_prior=False):
+    def __init__(self, input_size, hidden_size, n_classes, learnable_prior=False):
         super(VAE, self).__init__()
 
         self.K = n_classes
